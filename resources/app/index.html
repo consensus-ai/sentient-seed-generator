@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="static/css/base.css"/>
+    <link rel="stylesheet" href="static/css/avenir-next.css"/>
     <link rel="stylesheet" href="static/lib/astiloader/astiloader.css">
     <link rel="stylesheet" href="static/lib/astimodaler/astimodaler.css">
     <link rel="stylesheet" href="static/lib/astinotifier/astinotifier.css">
@@ -10,10 +11,25 @@
 </head>
 <body>
     <div class="body-container">
-        <h1>Consensus AI - Seed Generator</h1>
-        <button class="btn generate-btn" id="generate-seed-btn">Generate</button>
-        <div class="seed-container" id="seed-container"></div>
-        <div class="address-container" id="address-container"></div>
+        <div class="header">
+            <div class="logo"></div>
+            <span>CONSENSUS</span>
+        </div>
+
+        <div class="form-container">
+            <div class="btn generate-btn" id="generate-seed-btn">Generate Seed</div>
+
+            <div class="seed-container">
+                <div class="label">Seed:</div>
+                <div class="seed" id="seed"></div>
+                <div class="disclaimer"><b>Warning!</b> save this seed in a safe place offline. If you lose it, your funds will be lost forever.</div>
+            </div>
+
+            <div class="address-container">
+                <div class="label">Public address:</div>
+                <div class="address" id="address"></div>
+            </div>
+        </div>
     </div>
 
     <script src="static/js/index.js"></script>

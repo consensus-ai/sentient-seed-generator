@@ -8,11 +8,11 @@ let index = {
                     return
                 }
 
-                seedContainer = document.getElementById("seed-container")
+                seedContainer = document.getElementById("seed")
                 seedContainer.innerHTML = message.payload.seed
                 console.log(message.payload.seed)
 
-                addressContainer = document.getElementById("address-container")
+                addressContainer = document.getElementById("address")
                 addressContainer.innerHTML = message.payload.addresses[0]
                 console.log(message.payload.addresses[0])
             })

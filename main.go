@@ -10,7 +10,7 @@ import (
 )
 
 // Constants
-const htmlAbout = `Sentient Seed Generator`
+const htmlAbout = `Consensus Seed Generator`
 
 // Vars
 var (
@@ -58,8 +58,9 @@ func main() {
 			Options: &astilectron.WindowOptions{
 				BackgroundColor: astilectron.PtrStr("#333"),
 				Center:          astilectron.PtrBool(true),
-				Height:          astilectron.PtrInt(700),
-				Width:           astilectron.PtrInt(700),
+				Height:          astilectron.PtrInt(600),
+				Width:           astilectron.PtrInt(550),
+				Resizable:       astilectron.PtrBool(false),
 			},
 		}},
 	}); err != nil {
