@@ -25,25 +25,25 @@ for os in osx linux windows; do
   (
     if [ $os = 'osx' ]; then
       appDir="output/darwin-amd64"
-      binName="${binaryName}-${os}.app.zip"
+      binName="${binaryName}-${os}-amd64.app.zip"
       (
         cd $appDir
-        mv "${binaryName}.app" "${binaryName}-${os}.app"
-        zip -r $binName "${binaryName}-${os}.app"
+        mv "${binaryName}.app" "${binaryName}-${os}-amd64.app"
+        zip -r $binName "${binaryName}-${os}-amd64.app"
       )
     elif [ $os = 'linux' ]; then
       appDir="output/linux-amd64"
-      binName="${binaryName}-${os}"
+      binName="${binaryName}-${os}-amd64"
       (
         cd $appDir
-        mv "${binaryName}" "${binaryName}-${os}"
+        mv "${binaryName}" "${binaryName}-${os}-amd64"
       )
     elif [ $os = 'windows' ]; then
       appDir="output/windows-amd64"
-      binName="${binaryName}-${os}.exe"
+      binName="${binaryName}-${os}-amd64.exe"
       (
         cd $appDir
-        mv "${binaryName}.exe" "${binaryName}-${os}.exe"
+        mv "${binaryName}.exe" "${binaryName}-${os}-amd64.exe"
       )
     fi
 
