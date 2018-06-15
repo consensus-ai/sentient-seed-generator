@@ -15,4 +15,5 @@ bind*.go
 output
 .DS_Store
 Thumbs.db
+windows.syso
 
