@@ -16,7 +16,7 @@ const htmlAbout = `Consensus Seed Generator`
 var (
 	AppName string
 	BuiltAt string
-	debug   = flag.Bool("d", true, "enables the debug mode")
+	debug   = flag.Bool("d", false, "enables the debug mode")
 	w       *astilectron.Window
 )
 
@@ -42,7 +42,7 @@ func main() {
 			{
 				Label: astilectron.PtrStr("File"),
 				SubMenu: []*astilectron.MenuItemOptions{
-					{Role: astilectron.MenuItemRoleClose},
+					{Role: astilectron.MenuItemRoleQuit},
 				},
 			},
 			{
@@ -61,6 +61,9 @@ func main() {
 				Height:          astilectron.PtrInt(600),
 				Width:           astilectron.PtrInt(550),
 				Resizable:       astilectron.PtrBool(false),
+				Fullscreenable:  astilectron.PtrBool(false),
+				Maximizable:     astilectron.PtrBool(false),
+				MinimizeOnClose: astilectron.PtrBool(false),
 			},
 		}},
 	}); err != nil {
