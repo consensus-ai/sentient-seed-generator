@@ -48,7 +48,7 @@ for os in osx linux windows; do
     fi
 
     cd $appDir
-
+    chmod +x binName
     openssl dgst -sha256 -sign $privkeyFile -out $binName.sig $binName
     if [[ -n $pubkeyFile ]]; then
       openssl dgst -sha256 -verify $pubkeyFile -signature $binName.sig $binName
