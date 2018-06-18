@@ -16,7 +16,9 @@ version=${3:-v0.0.1}
 rm -rf bind* windows.syso output
 
 # run the bundler
-astilectron-bundler -v
+echo "Bundling the electron app..."
+astilectron-bundler
+echo "Done bundling the electron app"
 
 # sign and verify the binaries
 compiledBinaryBaseName="sentient-seed-generator"
