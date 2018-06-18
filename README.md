@@ -12,6 +12,8 @@ This is a fully offline wallet generator for Sentient Network. It will generate 
   * You can receive funds by sharing this address with the payer
   * If you're one of the participants who will be included in the genesis block, you will need to copy this address into your Consensus account
 
+When generating your wallet, you can go offline (disable Wifi, unplug your Ethernet cord, etc).
+
 # Development Setup
 
 ## 1. Install the repo and dependencies
