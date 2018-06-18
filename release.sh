@@ -10,7 +10,7 @@ fi
 
 privkeyFile=$1
 pubkeyFile=$2
-uiVersion=${3:-v0.0.1}
+version=${3:-v0.0.1}
 
 # ensure we have a clean state
 rm -rf bind* windows.syso output
@@ -18,40 +18,35 @@ rm -rf bind* windows.syso output
 # run the bundler
 astilectron-bundler -v
 
-
 # sign and verify the binaries
-binaryName="sentient-seed-generator"
+compiledBinaryBaseName="sentient-seed-generator"
+outputDir="output"
 for os in osx linux windows; do
-  (
-    if [ $os = 'osx' ]; then
-      appDir="output/darwin-amd64"
-      binName="${binaryName}-${os}-amd64.app.zip"
-      (
-        cd $appDir
-        mv "${binaryName}.app" "${binaryName}-${os}-amd64.app"
-        zip -r $binName "${binaryName}-${os}-amd64.app"
-      )
-    elif [ $os = 'linux' ]; then
-      appDir="output/linux-amd64"
-      binName="${binaryName}-${os}-amd64"
-      (
-        cd $appDir
-        mv "${binaryName}" "${binaryName}-${os}-amd64"
-      )
-    elif [ $os = 'windows' ]; then
-      appDir="output/windows-amd64"
-      binName="${binaryName}-${os}-amd64.exe"
-      (
-        cd $appDir
-        mv "${binaryName}.exe" "${binaryName}-${os}-amd64.exe"
-      )
-    fi
+  if [ $os = 'osx' ]; then
+    appDir="output/darwin-amd64"
+    binaryExtension=".app"
+  elif [ $os = 'linux' ]; then
+    appDir="output/linux-amd64"
+    binaryExtension=""
+  elif [ $os = 'windows' ]; then
+    appDir="output/windows-amd64"
+    binaryExtension=".exe"
+  fi
 
-    cd $appDir
-    chmod +x $binName
-    openssl dgst -sha256 -sign $privkeyFile -out $binName.sig $binName
+  binarySuffix="${version}-${os}-amd64"
+  compiledBinaryName=$compiledBinaryBaseName$binaryExtension
+  outputBinaryName="${compiledBinaryBaseName}-${binarySuffix}$binaryExtension"
+
+  mv $appDir/$compiledBinaryName $outputDir/$outputBinaryName
+
+  (
+    cd $outputDir
+    zipFile=$outputBinaryName.zip
+    zip -r $zipFile $outputBinaryName
+
+    openssl dgst -sha256 -sign $privkeyFile -out $zipFile.sig $zipFile
     if [[ -n $pubkeyFile ]]; then
-      openssl dgst -sha256 -verify $pubkeyFile -signature $binName.sig $binName
+      openssl dgst -sha256 -verify $pubkeyFile -signature $zipFile.sig $zipFile
     fi
   )
 done
