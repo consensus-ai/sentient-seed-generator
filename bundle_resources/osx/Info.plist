@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>CFBundleIconFile</key>
+		<string>sentient-seed-generator.icns</string>
+		<key>CFBundleDisplayName</key>
+		<string>sentient-seed-generator</string>
+		<key>CFBundleExecutable</key>
+		<string>sentient-seed-generator</string>
+		<key>CFBundleName</key>
+		<string>sentient-seed-generator</string>
+		<key>CFBundleIdentifier</key>
+		<string>com.sentient-seed-generator</string>
+		<key>LSUIElement</key>
+		<string>NO</string>
+		<key>CFBundlePackageType</key>
+		<string>APPL</string>
+	</dict>
+</plist>
