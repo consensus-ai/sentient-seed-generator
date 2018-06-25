@@ -54,7 +54,6 @@ const copyAddress = () => {
 }
 
 // Render top-level component, pass controller data as props
-//
 const render = () =>
 	preact.render(<SeedGenerator />, document.getElementById('app'), document.getElementById('app').lastElementChild);
 

@@ -24,8 +24,8 @@ func main() {
 		Title:     "Sentient Seed Generator",
 		Width:     550, // px
 		Height:    600, // px
-		Resizable: true,
-		Debug:     true,
+		Resizable: false,
+		Debug:     false,
 	})
 	defer w.Exit()
 
