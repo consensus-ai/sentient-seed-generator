@@ -25,7 +25,7 @@ func main() {
 		Width:     550, // px
 		Height:    650, // px
 		Resizable: false,
-		Debug:     true,
+		Debug:     false,
 	})
 	defer w.Exit()
 
