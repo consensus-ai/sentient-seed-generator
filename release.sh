@@ -25,7 +25,7 @@ echo "Done bundling the electron app"
 compiledBinaryBaseName="sentient-seed-generator"
 outputDir="output"
 
-for os in osx linux windows; do
+for os in osx; do
   if [ $os = 'osx' ]; then
     appDir="output/darwin-amd64"
     binaryExtension=".app"
@@ -78,10 +78,10 @@ for os in osx linux windows; do
       zip -ry $zipFile $outputBinaryName
     fi
 
-    openssl dgst -sha256 -sign $privkeyFile -out $zipFile.sig $zipFile
-    if [[ -n $pubkeyFile ]]; then
-      openssl dgst -sha256 -verify $pubkeyFile -signature $zipFile.sig $zipFile
-    fi
+    # openssl dgst -sha256 -sign $privkeyFile -out $zipFile.sig $zipFile
+    # if [[ -n $pubkeyFile ]]; then
+    #   openssl dgst -sha256 -verify $pubkeyFile -signature $zipFile.sig $zipFile
+    # fi
   )
 done
 

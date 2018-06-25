@@ -12,8 +12,10 @@
 *.out
 
 bind*.go
-output
 .DS_Store
 Thumbs.db
 windows.syso
+
+sentient-seed-generator
+release
 
