@@ -47,24 +47,26 @@ const generateNewSeed = () => {
 }
 
 const copySeed = () => {
-    var seedEl = document.getElementById("seed");
-    var range = document.createRange();
-    range.selectNode(seedEl);
-    window.getSelection().addRange(range);
+    var seed = document.getElementById("seed").textContent;
+    const el = document.createElement('textarea');
+    el.value = seed;
+    document.body.appendChild(el);
+    el.select();
     document.execCommand('copy');
-    window.getSelection().removeAllRanges();
+    document.body.removeChild(el);
 
     document.getElementById("seed-copy-confirmation").classList.remove("hidden");
     document.getElementById("address-copy-confirmation").classList.add("hidden");
 }
 
 const copyAddress = () => {
-    var addressEl = document.getElementById("address");
-    var range = document.createRange();
-    range.selectNode(addressEl);
-    window.getSelection().addRange(range);
+    var address = document.getElementById("address").textContent;
+    const el = document.createElement('textarea');
+    el.value = address;
+    document.body.appendChild(el);
+    el.select();
     document.execCommand('copy');
-    window.getSelection().removeAllRanges();
+    document.body.removeChild(el);
 
     document.getElementById("address-copy-confirmation").classList.remove("hidden");
     document.getElementById("seed-copy-confirmation").classList.add("hidden");
