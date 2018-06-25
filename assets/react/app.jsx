@@ -18,12 +18,14 @@ class SeedGenerator extends preact.Component {
             <div class="seed-container">
                 <div class="label">Backup seed:</div>
                 <div class="seed" id="seed">{seedGenerator.data.seed}</div>
+                <div class="btn-copy" onClick={copySeed}>copy</div>
                 <div class="disclaimer"><b>Warning!</b> save this seed in a safe place offline. If you lose it, your funds will be lost forever.</div>
             </div>
 
             <div class="address-container">
                 <div class="label">Public address:</div>
                 <div class="address" id="address">{seedGenerator.data.address}</div>
+                <div class="btn-copy" onClick={copyAddress}>copy</div>
             </div>
         </div>
       </div>
@@ -31,7 +33,28 @@ class SeedGenerator extends preact.Component {
   }
 }
 
+const copySeed = () => {
+    var seed = document.getElementById("seed").textContent;
+    const el = document.createElement('textarea');
+    el.value = seed;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+}
+
+const copyAddress = () => {
+    var seed = document.getElementById("address").textContent;
+    const el = document.createElement('textarea');
+    el.value = seed;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+}
+
 // Render top-level component, pass controller data as props
+//
 const render = () =>
 	preact.render(<SeedGenerator />, document.getElementById('app'), document.getElementById('app').lastElementChild);
 

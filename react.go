@@ -1,7 +1,5 @@
 package main
 
-//go:generate go-bindata -o assets.go assets/react/... assets/styles.css
-
 import (
 	"fmt"
 	"html/template"
