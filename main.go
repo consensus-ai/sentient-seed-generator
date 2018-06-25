@@ -23,9 +23,9 @@ func main() {
 	w := webview.New(webview.Settings{
 		Title:     "Sentient Seed Generator",
 		Width:     550, // px
-		Height:    600, // px
+		Height:    650, // px
 		Resizable: false,
-		Debug:     false,
+		Debug:     true,
 	})
 	defer w.Exit()
 

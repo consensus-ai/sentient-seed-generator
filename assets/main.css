@@ -67,7 +67,6 @@ html, body {
   color: #FFFFFF;
 }
 
-
 .form-container {
   display: flex;
   flex-direction: column;
@@ -82,17 +81,12 @@ html, body {
 }
 
 .btn {
-  user-select:none;
   -webkit-user-select:none;
   cursor: pointer;
 }
 
 .btn:hover {
   opacity: 0.8;
-}
-
-.btn:active {
-  transform: translateX(2px) translateY(2px);
 }
 
 .generate-btn {
@@ -106,13 +100,16 @@ html, body {
   box-shadow: 3px 3px 5px 0 rgba(167,177,197,0.50);
   border-radius: 3.9px;
 
-  cursor: pointer;
   color: #FFFFFF;
 }
 
+.copy-container {
+  display: flex;
+  flex-direction: row;
+  align-self: left;
+}
+
 .btn-copy {
-  width: 20%;
-  align-self: center;
   height: 25px;
   line-height: 25px;
   text-align: center;
@@ -126,11 +123,21 @@ html, body {
   cursor: pointer;
   color: #494949;
 
-  margin: 5px 0 10px 0;
+  margin: 10px 0 12px 0;
+  font-size: 13px;
+  width: 60px;
 }
 
 .btn-copy:hover {
   opacity: 0.8;
+}
+
+.copy-confirmation {
+  height: 25px;
+  line-height: 25px;
+  margin: 12px 0 10px 15px;
+  font-size: 12px;
+  color: rgb(3, 158, 67);
 }
 
 .seed-container {
@@ -151,14 +158,14 @@ html, body {
 
 .seed-container .disclaimer {
   font-size: 12px;
-  padding: 0 8px;
+  padding: 0 6px;
   font-style: italic;
-  margin-top: 6px;
+  margin-top: 5px;
   color: #ce1616;
 }
 
 .address-container {
-  margin-top: 30px;
+  margin-top: 45px;
   display: flex;
   flex-direction: column;
 }
@@ -177,4 +184,8 @@ html, body {
 .label {
   margin-left: 3px;
   font-size: 15px;
+}
+
+.hidden {
+  display: none;
 }
