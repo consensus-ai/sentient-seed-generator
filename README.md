@@ -26,9 +26,10 @@ go get -u github.com/zserge/webview/...
 go get -u github.com/NebulousLabs/entropy-mnemonics/...
 go get -u github.com/NebulousLabs/fastrand/...
 go get -u github.com/NebulousLabs/merkletree/...
+go get -u github.com/gopherjs/gopherjs/...
 ```
 
-## 2. Build the app
+## 2. Build the native apps
 If you're on Linux, you will have to install `gtk+-3.0` and `webkit2gtk-4.0` like so:
 ```bash
 sudo apt-get install build-essential libgtk-3-dev
@@ -41,8 +42,14 @@ cd $GOPATH/src/github.com/consensus-ai/sentient-seed-generator
 go build
 ```
 
+## 2.1 Build the web app
+```bash
+cd $GOPATH/src/github.com/consensus-ai/sentient-seed-generator/gopherjs
+gopherjs build main.go
+```
+
 ## 3. Open the app
-Just execute the binary that was built in the previous step
+Just execute the binary that was built in the previous step, or the sentient-seed-generator.html file
 
 ## 4. Making changes
 
