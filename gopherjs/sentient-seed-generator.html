@@ -10,6 +10,8 @@
         var seedGen = seedgenerator.NewSeedGenerator();
         document.getElementById("seed").innerHTML = seedGen.Seed();
         document.getElementById("address").innerHTML = seedGen.Address();
+        document.getElementById("address-copy-confirmation").classList.add("hidden");
+        document.getElementById("seed-copy-confirmation").classList.add("hidden");
       }
 
       function copySeed() {
